@@ -148,7 +148,7 @@
 						<h3 class="invisible">GCWeb visual look at the top part of the template</h3>
 						<div class="flex-container">
 							<div class="col">
-								<img class="gcweb" src="./img/gcweb-top.png" alt="screen shot of Canada.ca page. See notes for description">
+								<img class="gcweb" src="./img/gcweb-app-top.png" alt="screen shot of Canada.ca page. See notes for description">
 							</div>
 							<div class="col">
 								<p>Components from the top of the page controlled by the CDTS: </p>
@@ -181,7 +181,7 @@
 						<h3 class="invisible">GCWeb visual look at the bottom half of the template</h3>
 						<div class="flex-container">
 							<div class="col">
-								<img class="gcweb" src="./img/gcweb-bottom.png" alt="screen shot of Canada.ca page. See notes for description">
+								<img class="gcweb" src="./img/gcweb-app-bottom.png" alt="screen shot of Canada.ca page. See notes for description">
 							</div>
 							<div class="col">
 								<p>Components from the bottom of the page controlled by the CDTS: </p>
@@ -214,15 +214,15 @@
 						<h3 class="invisible">GCWeb different template parts</h3>
 						<div class="flex-container">
 							<div class="col">
-								<img class="gcweb" src="./img/gcweb.png" alt="screen shot of Canada.ca page. See notes for description">
+								<img class="gcweb" src="./img/gcweb-app.png" alt="screen shot of Canada.ca page. See notes for description">
 							</div>
 							<div class="col">
 								<p>Sections of the source code controlled by the CDTS JavaScript:</p>
 								<ul>
 									<li class="fragment fade-up">refTop</li>
-									<li class="fragment fade-up">top</li>
+									<li class="fragment fade-up">appTop</li>
 									<li class="fragment fade-up">preFooter</li>
-									<li class="fragment fade-up">footer</li>
+									<li class="fragment fade-up">appFooter</li>
 									<li class="fragment fade-up">refFooter</li>
 								</ul>
 							</div>
@@ -234,11 +234,11 @@
 							<dl>
 								<dt>refTop</dt>
 								<dd>Controls the information in the <code>head</code> element, like the <b>stylesheets</b> and the Adobe Analytics code.</dd>
-								<dt>top</dt>
+								<dt>appTop</dt>
 								<dd>Controls the main main, search language toggle and the breadcrumbs</dd>
 								<dt>preFooter</dt>
 								<dd>Controls the Date modified, Feedback and Share buttons</dd>
-								<dt>footer</dt>
+								<dt>appFooter</dt>
 								<dd>Controls the Contact us link if you want to use a different link than what's on Canada.ca</dd>
 								<dt>refFooter</dt>
 								<dd>Controls the code after the <code>footer</code> element. Also used to define an exit script. Will demo that later in this presentation.</dd>
@@ -274,12 +274,15 @@
 						</aside>
 					</section>
 					<section>
-						<h3>top</h3>
+						<h3>appTop</h3>
 						<p>Used to control the components in the header and before the <code>main</code>.</p>
 						<pre><code data-trim data-noescape>&lt;script&gt;
 	var defTop = document.getElementById("def-top");
-	defTop.outerHTML = wet.builder.top({
-		"cdnEnv" : "prod",
+	defTop.outerHTML = wet.builder.appTop({
+		"appName": [{
+			"text": "Application name",
+			"href": "./"
+		}],
 		"lngLinks" : [{
 			"lang" : "fr",
 			"href" : "content-fr.shtml",
@@ -342,11 +345,11 @@
 							</aside>
 						</section>
 						<section>
-							<h3>footer</h3>
+							<h3>appFooter</h3>
 							<p>Used to control the template content in the <code>footer</code>.</p>
 							<pre><code data-trim data-noescape>&lt;script&gt;
 	var defFooter = document.getElementById("def-footer");
-	defFooter.outerHTML = wet.builder.footer({
+	defFooter.outerHTML = wet.builder.appFooter({
 		"cdnEnv": "prod",
 		"contactLinks": "https://www.department.gc.ca/en/contact.html"
 	});
