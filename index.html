@@ -137,9 +137,23 @@
 					</section>
 					<section>
 						<h3>CDTS release cycle</h3>
-						<p>We usually release two weeks after a WET release.</p>
+						<p>We release every 4 months.</p>
+						<p class="fragment fade-up"><span style="color:hotpink">v1.0.0</span> will be released in <strong style="color:orange">April</strong>.</p>
 						<aside class="notes">
-							<p>We are trying to change the release cycles into smaller changes more often but for now we are keeping it at a quarterly release cycle.</p>
+							<p>WET has changed its release cycles to release more often but CDTS cannot keep up with them so we are staying at a quarerly release.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>What is version 1.0.0?</h3>
+						<ul>
+							<li class="fragment fade-up">Open source on Github.com</li>
+							<li class="fragment fade-up">Builds with NodeJS</li>
+							<li class="fragment fade-up"><abbr title="Continuous integration (CI) and continuous delivery (CD)">CI/CD</abbr> pipeline based on WET</li>
+						</ul>
+						<aside class="notes">
+							<p>With WET releasing more often, we decided to setup our own versioning scheme and break away from being locked down to WET's version numbering. Allowing us to indepently release on our own schedule.</p>
+							<p>CDTS was using a manual process to update, build and deploy we decided to find a way to make the process more automated. Because we limited resources (either in developers or time), we decided to build our CI process to something we were already familliar with, The Web Experience Toolkit</p>
+							<p>Using Travis-Ci and git tags, we automated the deploys to match our release tags in git.</p>
 						</aside>
 					</section>
 				</section>
